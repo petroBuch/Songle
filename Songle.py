@@ -16,9 +16,8 @@ class Songle(MDApp):
 		screen_manager.add_widget(Builder.load_file("Main.kv"))
 		return screen_manager
 
-	def press(self, *args):
-		screen_manager.current = "menu"
-
+	# def press(self, *args):
+	# 	screen_manager.current = "menu"
 
 if __name__ == '__main__':
 	Songle().run()
