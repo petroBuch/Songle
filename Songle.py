@@ -4,7 +4,7 @@ from kivy.uix.gridlayout import GridLayout
 from kivymd.app import MDApp
 from kivy.lang import Builder
 from kivy.core.window import Window
-from kivy.uix.screenmanager import ScreenManager
+from kivy.uix.screenmanager import ScreenManager, Screen
 Window.size = (360, 700)
 
 
@@ -13,11 +13,18 @@ class Songle(MDApp):
 		global screen_manager
 		screen_manager = ScreenManager()
 		screen_manager.add_widget(Builder.load_file("Login.kv"))
-		screen_manager.add_widget(Builder.load_file("Main.kv"))
+		screen_manager.add_widget(Builder.load_file("Register.kv"))
+		screen_manager.add_widget(Builder.load_file("Home.kv"))
+		screen_manager.current = "login"
 		return screen_manager
 
-	# def press(self, *args):
-	# 	screen_manager.current = "menu"
+	def press(self, *args):
+		# if args[1] == "login":
+		# 	return screen_manager.switch_to(Screen(name=args[1]), direction="left")
+		# else:
+		screen_manager.current = args[1]
+		return screen_manager
+
 
 if __name__ == '__main__':
 	Songle().run()
