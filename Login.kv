@@ -16,8 +16,9 @@
 
 
 MDScreen:
-	name: "Login"
+	name: "login"
 	icon: icon
+	signup: textb_signup
 
 	MDFloatLayout:
 		md_bg_color: get_color_from_hex("#1E1F24")
@@ -50,6 +51,7 @@ MDScreen:
 				pos_hint: {"x": 0, "y": 1}
 
 			MDTextButton:
+				id: textb_signup
 				background_normal: ""
 				background_color: get_color_from_hex("#18181F")
 				text: "Зарегистрироваться"
@@ -57,6 +59,7 @@ MDScreen:
 				color: get_color_from_hex("#596AC6")
 				font_size: "14sp"
 				pos_hint: {"x": 0.02, "y": 0}
+				on_press: app.press(self, "reg")
 
 
 		Image:
@@ -75,12 +78,13 @@ MDScreen:
 			pos_hint: {"x": 0.055, "y": 0.637}
 			size_hint: (0.88, 0.095)
 			hint_text: "Пароль"
+			password: True
 
 		MDIconButton:
 			id: icon 
 			icon: "square-outline"
 			size_hint: (0.08, 0.04)
-			pos_hint: {"x": 0.055, "y": 0.55}
+			pos_hint: {"x": 0.055, "y": 0.6}
 			theme_icon_color: "Custom"
 			icon_color: get_color_from_hex("#D9D9D9")
 
@@ -88,7 +92,7 @@ MDScreen:
 			text: "Не выходить из системы"
 			bold: True
 			size_hint: (0.614, 0.314)
-			pos_hint: {"x": 0.167, "y": 0.412}					
+			pos_hint: {"x": 0.167, "y": 0.462}					
 			font_size: "18sp"
 			background_normal: ""
 			background_color: get_color_from_hex("#1E1F24")
@@ -102,7 +106,7 @@ MDScreen:
 			color: get_color_from_hex("#E4E4E4")
 			size_hint: (0.33, 0.07)
 			pos_hint: {"x": 0.33, "y": 0.44}
-			# on_press: root.press(self)
+			on_press: app.press(self, "home")
 
 		MDLabel:
 			text: "или через"
