@@ -17,13 +17,10 @@ class Songle(MDApp):
 		screen_manager.add_widget(Builder.load_file("Home.kv"))
 		screen_manager.current = "login"
 		return screen_manager
+			
+	def press_stay(self, *args):
+		self.icon.icon = "steam"
 
-	def press(self, *args):
-		# if args[1] == "login":
-		# 	return screen_manager.switch_to(Screen(name=args[1]), direction="left")
-		# else:
-		screen_manager.current = args[1]
-		return screen_manager
 
 
 if __name__ == '__main__':
