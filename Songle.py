@@ -15,11 +15,11 @@ class Songle(MDApp):
 		screen_manager.add_widget(Builder.load_file("Login.kv"))
 		screen_manager.add_widget(Builder.load_file("Register.kv"))
 		screen_manager.add_widget(Builder.load_file("Home.kv"))
-		screen_manager.current = "login"
+		screen_manager.current = "home"
 		return screen_manager
 			
-	def press_stay(self, *args):
-		self.icon.icon = "steam"
+	# def press_stay(self, *args):
+	# 	self.icon.icon = "steam"
 
 
 
