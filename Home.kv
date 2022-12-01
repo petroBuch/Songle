@@ -1,19 +1,20 @@
-MDScreen:
+# MDScreen:
 	name: "home"
 
 	ScrollView:
 		do_scroll_x: False
 		do_scroll_y: True
+		size: (0, 1400)
 
 
-		MDFloatLayout:
-			size_hint: (1, None)
-			size: (0, 1400)
-			md_bg_color: get_color_from_hex("#18181F")
+		# MDFloatLayout:
+		# 	pos_hint: {"x": 0, "y": 0}
+		# 	size_hint: (1, 1)
+		# 	md_bg_color: get_color_from_hex("#18181F")
 
-			Image: 
-				source: "Items/avatar.png"
-				pos: (10, 15)
+		# 	Image: 
+		# 		source: "Items/avatar.png"
+		# 		pos_hint: {"x": 0.5, "y": 0.5}
 
 
 
