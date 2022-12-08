@@ -15,7 +15,7 @@ class Songle(MDApp):
 		screen_manager.add_widget(Builder.load_file("Login.kv"))
 		screen_manager.add_widget(Builder.load_file("Register.kv"))
 		screen_manager.add_widget(Builder.load_file("Home.kv"))
-		screen_manager.current = "reg"
+		screen_manager.current = "home"
 		return screen_manager
 			
 
