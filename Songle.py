@@ -9,8 +9,7 @@ Window.size = (360, 700)
 
 
 class Songle(MDApp):
-	def build(self): 
-		global screen_manager
+	def build(self):
 		screen_manager = ScreenManager()
 		screen_manager.add_widget(Builder.load_file("Login.kv"))
 		screen_manager.add_widget(Builder.load_file("Register.kv"))
