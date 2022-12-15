@@ -2,28 +2,39 @@ MDScreen:
 	name: "home"
 
 	MDFloatLayout:
-		md_bg_color: get_color_from_hex("#1E1F24")
+		md_bg_color: get_color_from_hex("#FFFFFF")
 
 		ScrollView:
 			do_scroll_x: False
 			do_scroll_y: True
-			pos_hint: {"x": 0, "y": 0}
+			bar_width: 0.5
 
 			MDFloatLayout:
-				size_hint_y: None
-				size: (360, 1900)
 				md_bg_color: get_color_from_hex("#1E1F24")
+				size_hint_y: None
+				size: (360, 5000)
 
 				Image: 
 					source: "Items/avatar.png"
-					pos_hint: {"x": 0.027, "y": 0.975}
-					size_hint: (0.11, 0.021)
+					pos_hint: {"x": 0.027, "y": 0.99}
+					size_hint: (0.11, 0.008)
 				MDLabel:
 					text: "Gustavo"
-					size_hint: (0.22, 0.012)
-					pos_hint: {"x": 0.16, "y": 0.98}
+					size_hint: (0.22, 0.048)
+					pos_hint: {"x": 0.16, "y": 0.97}
 					color: get_color_from_hex("#E4E4E4")
-
+				MDIconButton:
+					icon: "Items/upload.png"
+					size_hint: (0.086, 0.006)
+					pos_hint: {"x": 0.76, "y": 0.991}
+				MDIconButton:
+					icon: "Items/notification.png"
+					size_hint: (0.086, 0.006)
+					pos_hint: {"x": 0.88, "y": 0.991}
+				Image: 
+					source: "Items/separator.png"
+					size_hint: (1, 0.0004)
+					pos_hint: {"x": 0, "y": 0.98}
 		MDBoxLayout:
 			md_bg_color: get_color_from_hex("#23232D")
 			size_hint: (1, 0.07)
