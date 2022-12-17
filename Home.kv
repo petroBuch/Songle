@@ -13,28 +13,46 @@ MDScreen:
 				md_bg_color: get_color_from_hex("#1E1F24")
 				size_hint_y: None
 				size: (360, 5000)
-				MDBoxLayout:
+
+
 				Image: 
 					source: "Items/avatar.png"
 					pos_hint: {"x": 0.027, "y": 0.99}
 					size_hint: (0.11, 0.008)
+
 				MDLabel:
 					text: "Gustavo"
 					size_hint: (0.22, 0.048)
 					pos_hint: {"x": 0.16, "y": 0.97}
 					color: get_color_from_hex("#E4E4E4")
+
 				MDIconButton:
 					icon: "Items/upload.png"
-					size_hint: (0.086, 0.006)
-					pos_hint: {"x": 0.76, "y": 0.991}
+					size_hint: (0.088, 0.006)
+					pos_hint: {"x": 0.75, "y": 0.991}
+
 				MDIconButton:
 					icon: "Items/notification.png"
-					size_hint: (0.086, 0.006)
-					pos_hint: {"x": 0.88, "y": 0.991}
+					size_hint: (0.088, 0.005)
+					pos_hint: {"x": 0.87, "y": 0.9917}
+
 				Image: 
 					source: "Items/separator.png"
 					size_hint: (1, 0.0004)
-					pos_hint: {"x": 0, "y": 0.98}
+					pos_hint: {"x": 0, "y": 0.987}
+
+				MDLabel:
+					text: "История"
+					size_hint: (0.236, 0.0048)
+					color: get_color_from_hex("#E4E4E4")
+					pos_hint: {"x": 0.027, "y": 0.978}
+
+				MDLabel: 
+					text: "Все недавние эмоции в одной строчке"
+					color: get_color_from_hex("#E4E4E4")		
+
+
+
 		MDBoxLayout:
 			md_bg_color: get_color_from_hex("#23232D")
 			size_hint: (1, 0.07)
