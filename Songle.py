@@ -19,6 +19,5 @@ class Songle(MDApp):
 			
 
 
-
 if __name__ == '__main__':
 	Songle().run()
