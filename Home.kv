@@ -1,3 +1,13 @@
+<SongImage@Image>:
+	source: "Items/songpic.png"
+
+<SongLabel@MDLabel>:
+	text: "Lorem Ipsum"
+	size_hint: (1, 1)
+	color: get_color_from_hex("#E4E4E4")
+	md_bg_color: get_color_from_hex("#1E1F24")	
+
+
 MDScreen:
 	name: "home"
 
@@ -33,7 +43,7 @@ MDScreen:
 
 				MDIconButton:
 					icon: "Items/notification.png"
-					size_hint: (0.088, 0.0057)
+					size_hint: (0.088, 0.0068)
 					pos_hint: {"x": 0.87, "y": 0.9885}
 
 				Image: 
@@ -58,74 +68,33 @@ MDScreen:
 					do_scroll_y: False
 					bar_width: 0.5
 					size_hint_y: None
-					# size: (1000, 100)
+					size: (1000, 160)
 					pos_hint: {"x": 0, "y": 0.915}
 
 					MDGridLayout:
-						cols: 20
+						cols: 7
 						rows: 2
+						# spacing: [20, 10]
+						padding: [10, 0, 0, 0]
 						orientation: "tb-lr"
 						md_bg_color: get_color_from_hex("#1E1F24")
 						size_hint: (None, None)
-						size: (1000, 100)
+						size: (1000, 160)
 
-
-
-						Button:
-							text:"11"
-						Button:
-							text:"12"
-						Button:
-							text:"13"
-						Button:
-							text:"14"
-						Button:
-							text:"15"
-						Button:
-							text:"16"
-						Button:
-							text:"17"
-						Button:
-							text:"18"
-						Button:
-							text:"18"
-						Button:
-							text:"18"
-						Button:
-							text:"18"
-						Button:
-							text:"18"
-						Button:
-							text:"18"
-						Button:
-							text:"18"
-						Button:
-							text:"18"
-						Button:
-							text:"18"
-						Button:
-							text:"18"
-						Button:
-							text:"18"
-						Button:
-							text:"18"
-						Button:
-							text:"18"
-						Button:
-							text:"18"
-						Button:
-							text:"18"
-
-
-
-
-
-
-
-
-
-
-
+						SongImage
+						SongLabel
+						SongImage
+						SongLabel
+						SongImage
+						SongLabel
+						SongImage
+						SongLabel
+						SongImage
+						SongLabel
+						SongImage
+						SongLabel
+						SongImage
+						SongLabel
 
 
 
