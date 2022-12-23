@@ -12,56 +12,57 @@ MDScreen:
 			MDFloatLayout:
 				md_bg_color: get_color_from_hex("#1E1F24")
 				size_hint_y: None
-				size: (360, 5000)
+				size: (360, 3500)
 
 
 				Image: 
 					source: "Items/avatar.png"
-					pos_hint: {"x": 0.027, "y": 0.99}
-					size_hint: (0.11, 0.008)
+					pos_hint: {"x": 0.027, "y": 0.985}
+					size_hint: (0.11, 0.011)
 
 				MDLabel:
 					text: "Gustavo"
-					size_hint: (0.22, 0.048)
-					pos_hint: {"x": 0.16, "y": 0.97}
+					size_hint: (0.22, 0.0068)
+					pos_hint: {"x": 0.16, "y": 0.988}
 					color: get_color_from_hex("#E4E4E4")
 
 				MDIconButton:
 					icon: "Items/upload.png"
-					size_hint: (0.088, 0.006)
-					pos_hint: {"x": 0.75, "y": 0.991}
+					size_hint: (0.088, 0.0068)
+					pos_hint: {"x": 0.75, "y": 0.988}
 
 				MDIconButton:
 					icon: "Items/notification.png"
-					size_hint: (0.088, 0.005)
-					pos_hint: {"x": 0.87, "y": 0.9917}
+					size_hint: (0.088, 0.0057)
+					pos_hint: {"x": 0.87, "y": 0.9885}
 
 				Image: 
 					source: "Items/separator.png"
-					size_hint: (1, 0.0004)
-					pos_hint: {"x": 0, "y": 0.987}
+					size_hint: (1, 0.0006)
+					pos_hint: {"x": 0, "y": 0.982}
 
 				MDLabel:
 					text: "История"
-					size_hint: (0.236, 0.0048)
+					size_hint: (0.236, 0.0068)
 					color: get_color_from_hex("#E4E4E4")
-					pos_hint: {"x": 0.027, "y": 0.978}
+					pos_hint: {"x": 0.027, "y": 0.969}
 
 				MDLabel: 
 					text: "Все недавние эмоции в одной строчке"
 					color: get_color_from_hex("#818284")
-					size_hint: (0.9, 0.0034)
-					pos_hint: {"x": 0.027, "y": 0.9746}
+					size_hint: (0.9, 0.00514)
+					pos_hint: {"x": 0.027, "y": 0.964}
 
 				ScrollView:					
 					do_scroll_x: True
 					do_scroll_y: False
 					bar_width: 0.5
+					size_hint: (None, 0.032)
 
 					MDGridLayout:
 						orientation: "tb-lr"
-						md_bg_color: get_color_from_hex("#23232D")
-						size_hint: (1, 0.07)
+						md_bg_color: get_color_from_hex("#FFFFFF")
+						size_hint: (None, 1)
 						pos_hint: {"x": 0, "y": 0}
 
 
