@@ -1,5 +1,7 @@
 <SongImage@Image>:
 	source: "Items/songpic.png"
+	size_hint: (None, None)
+
 
 <SongLabel@MDLabel>:
 	text: "Lorem Ipsum"
@@ -74,7 +76,6 @@ MDScreen:
 					MDGridLayout:
 						cols: 7
 						rows: 2
-						# spacing: [20, 10]
 						padding: [10, 0, 0, 0]
 						orientation: "tb-lr"
 						md_bg_color: get_color_from_hex("#1E1F24")
@@ -96,7 +97,17 @@ MDScreen:
 						SongImage
 						SongLabel
 
+				MDLabel: 
+					text: "Тематическая неделя"
+					size_hint: (0.6, 0.0068)
+					pos_hint: {"x": 0.027, "y": 0.91}
+					color: get_color_from_hex("#E4E4E4")
 
+
+				Image:
+					source: "Items/themeweek.png"
+					pos_hint: {"x": 0.027, "y": 0.85}
+					size_hint: (0.94, 0.057)
 
 
 
