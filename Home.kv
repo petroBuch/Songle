@@ -116,20 +116,24 @@ MDScreen:
 					bold: True
 
 				MDBoxLayout:
-					size_hint: (0.94, 0.147)
+					size_hint: (1, 0.147)
 					pos_hint: {"x": 0.027, "y": 0.756}
 					md_bg_color: get_color_from_hex("#FFFFFF")
 
 
 					Image:
 						source: "Items/themeweek.png"
-						pos_hint: {"x": 0, "y": 0.62}
-						size_hint: (1, 0.388)
+						pos_hint: {"x": 0, "y": 0.61}
+						size_hint: (None, None)
+						size: (340, 200)
 
-					# MDBoxLayout:
-					# 	pos_hint: {"x": 0, "y": 0.097}
-					# 	md_bg_color: get_color_from_hex("#1E1F24")
-					# 	size_hint: (1, 0.097)
+					MDLabel:
+						text: "Таво роот"
+						pos_hint: {"x": 0.5, "y": 0}
+						md_bg_color: get_color_from_hex("#1E1F24")
+						color: get_color_from_hex("#FFFFFF")
+						size_hint: (None, None)
+						size: (340, 50)
 						
 
 
