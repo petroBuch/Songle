@@ -2,12 +2,21 @@
 	source: "Items/songpic.png"
 	size_hint: (None, None)
 
-
 <SongLabel@MDLabel>:
 	text: "Lorem Ipsum"
 	size_hint: (1, 1)
 	color: get_color_from_hex("#E4E4E4")
-	md_bg_color: get_color_from_hex("#1E1F24")	
+	md_bg_color: get_color_from_hex("#1E1F24")
+
+# <SongBoxLayout@MDBoxLayout>:
+# 	md_bg_color: get_color_from_hex("#FFFFFF")
+# 	size_hint: (1, 0.097)
+# 	# Image:
+# 	# 	source: "Items/songpic.png"
+# 	# 	size_hint: (0.1, 0.86)
+# 	# 	# pos_hint: {"x": 0.023, "y": 0.16}
+# 	# 	pos_hint: {"x": 0, "y": 0}
+
 
 
 MDScreen:
@@ -109,13 +118,19 @@ MDScreen:
 				MDBoxLayout:
 					size_hint: (0.94, 0.147)
 					pos_hint: {"x": 0.027, "y": 0.756}
+					md_bg_color: get_color_from_hex("#FFFFFF")
 
 
 					Image:
 						source: "Items/themeweek.png"
-						pos_hint: {"x": 0, "y": 0.61}
+						pos_hint: {"x": 0, "y": 0.62}
 						size_hint: (1, 0.388)
 
+					# MDBoxLayout:
+					# 	pos_hint: {"x": 0, "y": 0.097}
+					# 	md_bg_color: get_color_from_hex("#1E1F24")
+					# 	size_hint: (1, 0.097)
+						
 
 
 
