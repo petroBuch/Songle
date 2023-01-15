@@ -8,16 +8,29 @@
 	color: get_color_from_hex("#E4E4E4")
 	md_bg_color: get_color_from_hex("#1E1F24")
 
-# <SongBoxLayout@MDBoxLayout>:
-# 	md_bg_color: get_color_from_hex("#FFFFFF")
-# 	size_hint: (1, 0.097)
-# 	# Image:
-# 	# 	source: "Items/songpic.png"
-# 	# 	size_hint: (0.1, 0.86)
-# 	# 	# pos_hint: {"x": 0.023, "y": 0.16}
-# 	# 	pos_hint: {"x": 0, "y": 0}
+<ShadowCard>:
+	md_bg_color: get_color_from_hex("#1E1F24")
+	padding: 8
+	radius: [0, 0, 10, 10]
+	elevation: 6
+	shadow_color: get_color_from_hex("#18181F")
 
+	Image:
+		source: "Items/minisongpic.png"
+		pos_hint: {"x": 0, "y": 0}
+		size_hint: (None, None)
+		size: (34, 34)
 
+	MDLabel:
+		text: "Lorem Ipsum"
+		size_hint: (0.227, 0.3)
+		pos_hint: {"x": 0.15, "y": 0.5}
+		color: get_color_from_hex("#FFFFFF")
+	MDLabel:
+		text: "Lorem Ipsum"
+		size_hint: (0.152, 0.2)
+		pos_hint: {"x": 0.15, "y": 0.26}
+		color: get_color_from_hex("#E4E4E4")
 
 MDScreen:
 	name: "home"
@@ -114,26 +127,22 @@ MDScreen:
 					pos_hint: {"x": 0.027, "y": 0.905}
 					color: get_color_from_hex("#E4E4E4")
 					bold: True
-
-				MDBoxLayout:
-					size_hint: (1, 0.147)
-					pos_hint: {"x": 0.027, "y": 0.756}
-					md_bg_color: get_color_from_hex("#FFFFFF")
+					draw_shadow: True
 
 
-					Image:
-						source: "Items/themeweek.png"
-						pos_hint: {"x": 0, "y": 0.61}
-						size_hint: (None, None)
-						size: (340, 200)
+				ShadowImage:
+					source: "Items/themeweek.png"
+					pos_hint: {"x": 0.029, "y": 0.846}
+					size_hint: (None, None)
+					size: (340, 200)
+					elevation: 6
+					shadow_color: get_color_from_hex("#18181F")
 
-					MDLabel:
-						text: "Таво роот"
-						pos_hint: {"x": 0, "y": 0}
-						md_bg_color: get_color_from_hex("#1E1F24")
-						color: get_color_from_hex("#FFFFFF")
-						size_hint: (None, None)
-						size: (340, 50)
+
+				ShadowCard:
+					size_hint: (0.944, 0.014)
+					pos_hint: {"x": 0.029, "y": 0.831}
+
 						
 
 
