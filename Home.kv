@@ -16,12 +16,6 @@
 	elevation: 6
 	shadow_color: get_color_from_hex("#18181F")
 
-	Image:
-		source: "Items/minisongpic.png"
-		pos_hint: {"x": 0, "y": 0}
-		size_hint: (None, None)
-		size: (34, 34)
-
 	MDLabel:
 		text: "Lorem Ipsum"
 		size_hint: (0.227, 0.3)
@@ -32,6 +26,11 @@
 		size_hint: (0.152, 0.2)
 		pos_hint: {"x": 0.15, "y": 0.26}
 		color: get_color_from_hex("#E4E4E4")
+
+<MiniSongImage@Image>:
+	source: "Items/minisongpic.png"
+	size_hint: (None, None)
+	size: (34, 34)
 
 MDScreen:
 	name: "home"
@@ -143,6 +142,8 @@ MDScreen:
 				ShadowCard:
 					size_hint: (0.944, 0.014)
 					pos_hint: {"x": 0.029, "y": 0.831}
+				MiniSongImage:
+					pos_hint: {"x": 0.05, "y": 0.833}
 						
 
 
