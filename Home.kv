@@ -9,23 +9,22 @@
 	color: get_color_from_hex("#FFFFFF")
 	md_bg_color: get_color_from_hex("#1E1F24")
 
-<ShadowCard>:
-	md_bg_color: get_color_from_hex("#1E1F24")
-	padding: 8
-	radius: [0, 0, 10, 10]
-	elevation: 6
-	shadow_color: get_color_from_hex("#18181F")
+# <ShadowCard>:
+	# size_hint: (None, None)
+	# size: (340, 50)
+	# md_bg_color: get_color_from_hex("#1E1F24")
+	# # padding: [8, 8, 8, 8]
+	# radius: [0, 0, 10, 10]
+	# elevation: 6
+	# shadow_color: get_color_from_hex("#18181F")
 
-	MDLabel:
-		text: "Lorem Ipsum"
-		size_hint: (0.227, 0.3)
-		pos_hint: {"x": 0.15, "y": 0.5}
-		color: get_color_from_hex("#FFFFFF")
-	MDLabel:
-		text: "Lorem Ipsum"
-		size_hint: (0.152, 0.2)
-		pos_hint: {"x": 0.15, "y": 0.26}
-		color: get_color_from_hex("#E4E4E4")
+	# MDLabel:
+	# 	text: "Lorem Ipsum"
+	# 	font_size: "8sp"
+	# 	size_hint: (None, None)
+	# 	size: (55, 10)
+	# 	pos_hint: {"x": 0.158, "y": 0.23}
+	# 	color: get_color_from_hex("#E4E4E4")
 
 <MiniSongImage@Image>:
 	source: "Items/minisongpic.png"
@@ -140,10 +139,24 @@ MDScreen:
 
 
 				ShadowCard:
-					size_hint: (0.944, 0.014)
 					pos_hint: {"x": 0.029, "y": 0.831}
-				MiniSongImage:
-					pos_hint: {"x": 0.05, "y": 0.833}
+					size_hint: (None, None)
+					size: (340, 50)
+					md_bg_color: get_color_from_hex("#1E1F24")
+					# padding: [8, 8, 8, 8]
+					radius: [0, 0, 10, 10]
+					elevation: 6
+					shadow_color: get_color_from_hex("#18181F")
+
+					Label:
+						text: "Lorem Ipsum"
+						font_size: "12sp"
+						size_hint: (None, None)
+						size: (82, 15)
+						pos_hint: {"x": 0.5, "y": 0}
+						bg_color: get_color_from_hex("#FFFFFF")
+				# MiniSongImage:
+				# 	pos_hint: {"x": 0.05, "y": 0.8331}
 						
 
 
