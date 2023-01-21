@@ -6,8 +6,7 @@ from kivymd.app import MDApp
 from kivy.lang import Builder
 from kivy.core.window import Window
 from kivy.uix.screenmanager import ScreenManager, Screen
-from kivymd.uix.card import MDCard
-from kivymd.uix.behaviors import FakeRectangularElevationBehavior
+from kivymd.uix.behaviors import CommonElevationBehavior
 from kivy.uix.image import Image
 Window.size = (360, 700)
 
@@ -18,12 +17,13 @@ class Songle(MDApp):
 		screen_manager.add_widget(Builder.load_file("Login.kv"))
 		screen_manager.add_widget(Builder.load_file("Register.kv"))
 		screen_manager.add_widget(Builder.load_file("Home.kv"))
-		screen_manager.current = "home"
+		screen_manager.add_widget(Builder.load_file("Test.kv"))
+		screen_manager.current = "test"
 		return screen_manager
 			
-class ShadowCard(FakeRectangularElevationBehavior, MDBoxLayout):
+class ShadowCard(CommonElevationBehavior, MDBoxLayout):
 	pass
-class ShadowImage(FakeRectangularElevationBehavior, Image):
+class ShadowImage(CommonElevationBehavior, Image):
 	pass
 
 if __name__ == '__main__':
