@@ -17,10 +17,11 @@ class Songle(MDApp):
 		screen_manager.add_widget(Builder.load_file("Login.kv"))
 		screen_manager.add_widget(Builder.load_file("Register.kv"))
 		screen_manager.add_widget(Builder.load_file("Home.kv"))
-		screen_manager.add_widget(Builder.load_file("Test.kv"))
-		screen_manager.current = "test"
+		screen_manager.current = "home"
 		return screen_manager
-			
+	
+class ShadowBox(CommonElevationBehavior, MDBoxLayout):
+	pass		
 class ShadowCard(CommonElevationBehavior, MDBoxLayout):
 	pass
 class ShadowImage(CommonElevationBehavior, Image):
