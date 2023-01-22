@@ -1,3 +1,25 @@
+#:import Svg kivy.graphics.svg
+<PLFloatLayout@MDFloatLayout>:
+	size_hint: (None, None)
+	size: (150, 150)
+
+	MDLabel:
+		text: "30 песен"
+		font_size: "12sp"
+		color: get_color_from_hex("#FFFFFF")
+		size_hint: (0.333, 0.08)
+		pos_hint: {"x": 0.32, "y": 0.0333}
+
+	MDIconButton:
+		icon: "Items/like.png"
+		size_hint: (0.1133, 0.1)
+		pos_hint: {"x": 0.7, "y": 0.833}
+
+	MDIconButton:			
+		icon: "Items/more.png"		
+		size_hint: (0.02, 0.0866)
+		pos_hint: {"x": 0.913, "y": 0.84}
+
 <SongImage@Image>:
 	source: "Items/songpic.png"
 	size_hint: (None, None)
@@ -9,22 +31,53 @@
 	color: get_color_from_hex("#FFFFFF")
 	md_bg_color: get_color_from_hex("#1E1F24")
 
-# <ShadowCard>:
-	# size_hint: (None, None)
-	# size: (340, 50)
-	# md_bg_color: get_color_from_hex("#1E1F24")
-	# # padding: [8, 8, 8, 8]
-	# radius: [0, 0, 10, 10]
-	# elevation: 6
-	# shadow_color: get_color_from_hex("#18181F")
+<ShadowCard>:
+	size_hint: (0.9444, 0.0142)
+	radius: [1, 1, 10, 10]
+	elevation: 6
+	shadow_color: get_color_from_hex("#18181F")
 
-	# MDLabel:
-	# 	text: "Lorem Ipsum"
-	# 	font_size: "8sp"
-	# 	size_hint: (None, None)
-	# 	size: (55, 10)
-	# 	pos_hint: {"x": 0.158, "y": 0.23}
-	# 	color: get_color_from_hex("#E4E4E4")
+	MDFloatLayout:
+		size_hint: (1, 1)
+		md_bg_color: get_color_from_hex("#1E1F24")
+		radius: [1, 1, 10, 10]
+
+		MiniSongImage:
+			pos_hint: {"x": 0.023, "y": 0.16}
+			size_hint: (None, None)
+			size: (34, 34)
+
+		MDLabel:
+			text: "Lorem Ipsum"
+			font_size: "14sp"
+			size_hint: (0.24, 0.35)
+			pos_hint: {"x": 0.157, "y": 0.5}
+			color: get_color_from_hex("#E4E4E4")
+
+		MDLabel:
+			text: "Lorem Ipsum"
+			font_size: "10sp"
+			size_hint: (0.19, 0.25)
+			pos_hint: {"x": 0.157, "y": 0.26}
+			color: get_color_from_hex("#818284")
+
+		MDLabel:
+			text: "3:25"
+			font_size: "12sp"
+			size_hint: (0.076, 0.24)
+			pos_hint: {"x": 0.68, "y": 0.38}
+			color: get_color_from_hex("#FFFFFF")
+
+		MDIconButton:
+			icon: "Items/like.png"
+			size_hint: (0.062, 0.38)
+			pos_hint: {"x": 0.814, "y": 0.31}
+
+		MDIconButton:			
+			icon: "Items/more.png"		
+			size_hint: (0.02, 0.3)
+			pos_hint: {"x": 0.93, "y": 0.38}
+
 
 <MiniSongImage@Image>:
 	source: "Items/minisongpic.png"
@@ -137,45 +190,125 @@ MDScreen:
 					elevation: 6
 					shadow_color: get_color_from_hex("#18181F")
 
-				MDBoxLayout:
-					size_hint: (0.8, 0.2)
-					pos_hint: {"x": 0, "y": 0.5}
+				MDFillRoundFlatButton:
+					text: "Перейти к плейлисту"
 					md_bg_color: get_color_from_hex("#FFFFFF")
+					text_color: get_color_from_hex("#EF3838")
+					radius: (15, 15)
+					font_size: "10sp"
+					size_hint: (0.353, 0.0062)
+					pos_hint: {"x": 0.05, "y": 0.85}
 
-					Button:
-						text: "Lorem Ipsum"
-						font_size: "12sp"
-						size_hint: (None, None)
-						size: (100, 100)
-						pos_hint: {"x": 0.5, "y": 0.1}
-						md_bg_color: get_color_from_hex("000000")
+				ShadowCard:
+					pos_hint: {"x": 0.027, "y": 0.83}
+				ShadowCard:
+					pos_hint: {"x": 0.027, "y": 0.817}
+				ShadowCard:
+					pos_hint: {"x": 0.027, "y": 0.803}
+				ShadowCard:
+					pos_hint: {"x": 0.027, "y": 0.788}
+				ShadowCard:
+					pos_hint: {"x": 0.027, "y": 0.773}
+
+				ShadowBox:
+					size_hint: (0.9444, 0.0142)
+					radius: [1, 1, 10, 10]
+					padding: [14, 0, 0, 0]
+					elevation: 6
+					shadow_color: get_color_from_hex("#18181F")
+					orientation: "horizontal"
+					pos_hint: {"x": 0.027, "y": 0.758}
+					md_bg_color: get_color_from_hex("#1E1F24")
+
+					MDTextButton:
+						text: "Всего 30 песен"
 						color: get_color_from_hex("#FFFFFF")
+						pos_hint: {"x": 0.5, "y": 0.35}
+						size_hint: (0.29, 0.3)
 
-				# ShadowCard:
-				# 	pos_hint: {"x": 0.029, "y": 0.831}
-				# 	size_hint: (None, None)
-				# 	size: (340, 50)
-				# 	md_bg_color: get_color_from_hex("#1E1F24")
-				# 	# padding: [8, 8, 8, 8]
-				# 	radius: [0, 0, 10, 10]
-				# 	elevation: 6
-				# 	shadow_color: get_color_from_hex("#18181F")
+					MDLabel:
+						text: "1 : 23 : 45"
+						color: get_color_from_hex("#818284")
+						size_hint: (0.106, 0.2)
+						pos_hint: {"x": 0.835, "y": 0.37}
 
-				# 	Label:
-				# 		text: "Lorem Ipsum"
-				# 		font_size: "12sp"
-				# 		size_hint: (None, None)
-				# 		size: (82, 15)
-				# 		pos_hint: {"x": 0.5, "y": 0}
-				# 		bg_color: get_color_from_hex("#FFFFFF")
-				# MiniSongImage:
-				# 	pos_hint: {"x": 0.05, "y": 0.8331}
-						
+				MDLabel:
+					text: "Найдено для Вас"
+					size_hint: (0.472, 0.00686)
+					pos_hint: {"x": 0.027, "y": 0.747}
+					color: get_color_from_hex("#E4E4E4")
+
+				MDLabel:
+					text: "Основано на Вашей истории прослушивания"
+					size_hint: (0.95, 0.005)
+					pos_hint: {"x": 0.027, "y": 0.742}
+					color: get_color_from_hex("#818284")
+
+				MDGridLayout:
+					cols: 2
+					rows: 3
+					size_hint: (0.8888, 0.14)
+					pos_hint: {"x": 0.005, "y": 0.6}
+					md_bg_color: get_color_from_hex("#1E1F24")
+					spacing: 20
+
+
+					PLFloatLayout:
+						canvas.before:
+							BorderImage:
+								border: 10, 10, 10, 10
+								texture: "Items/plimage1.png"
+
+
+							
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		MDBoxLayout:
+			orientation: "horizontal"
+			size_hint: (1, 0.0714)
+			pos_hint: {"x": 0, "y": 0}
+			md_bg_color: get_color_from_hex("#23232D")
+
+			MDIconButton:
+				icon: "Items/home.png"
+				pos_hint: {"x": 0.088, "y": 0.16}
+				size_hint: (0.088, 0.66)
+
+			MDIconButton:
+				icon: "Items/radio.png"
+				pos_hint: {"x": 0.33, "y": 0.16}
+				size_hint: (0.088, 0.66)
+
+			MDIconButton:
+				icon: "Items/search.png"
+				pos_hint: {"x": 0.57, "y": 0.16}
+				size_hint: (0.088, 0.66)
+
+			MDIconButton:
+				icon: "Items/playlist.png"
+				pos_hint: {"x": 0.82, "y": 0.16}
+				size_hint: (0.088, 0.66)
 
 
 
