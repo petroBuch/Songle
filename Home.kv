@@ -1,24 +1,30 @@
 #:import Svg kivy.graphics.svg
-<PLFloatLayout@MDFloatLayout>:
-	size_hint: (None, None)
-	size: (150, 150)
+# <PLFloatLayout@MDFloatLayout>
+# 	size_hint: (None, None)
+# 	size: (150, 150)
 
-	MDLabel:
-		text: "30 песен"
-		font_size: "12sp"
-		color: get_color_from_hex("#FFFFFF")
-		size_hint: (0.333, 0.08)
-		pos_hint: {"x": 0.32, "y": 0.0333}
+# 	Image:
+# 		id: plimage
+# 		source: "Items/plimage1.png"
+# 		pos_hint: {"x": 0, "y": 0}
 
-	MDIconButton:
-		icon: "Items/like.png"
-		size_hint: (0.1133, 0.1)
-		pos_hint: {"x": 0.7, "y": 0.833}
+# 	MDLabel:
+# 		text: "30 песен"
+# 		font_size: "12sp"
+# 		color: get_color_from_hex("#FFFFFF")
+# 		size_hint: (0.333, 0.08)
+# 		pos_hint: {"x": 0.32, "y": 0.0333}
 
-	MDIconButton:			
-		icon: "Items/more.png"		
-		size_hint: (0.02, 0.0866)
-		pos_hint: {"x": 0.913, "y": 0.84}
+# 	MDIconButton:
+# 		icon: "Items/like.png"
+# 		size_hint: (0.1133, 0.1)
+# 		pos_hint: {"x": 0.7, "y": 0.833}
+
+# 	MDIconButton:	
+# 		icon: "Items/more.png"
+# 		icon_size: "4sp"	
+# 		size_hint: (0.02, 0.0866)
+# 		pos_hint: {"x": 0.913, "y": 0.84}
 
 <SongImage@Image>:
 	source: "Items/songpic.png"
@@ -69,14 +75,18 @@
 			color: get_color_from_hex("#FFFFFF")
 
 		MDIconButton:
+			allow_stretch: True
+			keep_ratio: False
 			icon: "Items/like.png"
-			size_hint: (0.062, 0.38)
+			size_hint: (0.071, 0.45)
 			pos_hint: {"x": 0.814, "y": 0.31}
 
-		MDIconButton:			
-			icon: "Items/more.png"		
-			size_hint: (0.02, 0.3)
+		MDIconButton:		
+			size_hint: (None, None)
+			size: (3, 50)
 			pos_hint: {"x": 0.93, "y": 0.38}
+			icon: "Items/more.png"
+
 
 
 <MiniSongImage@Image>:
@@ -86,7 +96,7 @@
 
 MDScreen:
 	name: "home"
-
+	grid_lay: plgl
 	MDFloatLayout:
 		md_bg_color: get_color_from_hex("#FFFFFF")
 
@@ -245,44 +255,13 @@ MDScreen:
 					color: get_color_from_hex("#818284")
 
 				MDGridLayout:
+					id: plgl
 					cols: 2
 					rows: 3
 					size_hint: (0.8888, 0.14)
-					pos_hint: {"x": 0.005, "y": 0.6}
+					pos_hint: {"x": 0.05, "y": 0.6}
 					md_bg_color: get_color_from_hex("#1E1F24")
 					spacing: 20
-
-
-					PLFloatLayout:
-						canvas.before:
-							BorderImage:
-								border: 10, 10, 10, 10
-								texture: "Items/plimage1.png"
-
-
-							
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 		MDBoxLayout:
 			orientation: "horizontal"
