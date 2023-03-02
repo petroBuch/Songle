@@ -11,6 +11,8 @@ from kivy.uix.screenmanager import ScreenManager, Screen
 from kivymd.uix.behaviors import CommonElevationBehavior
 from kivy.uix.image import Image
 from kivymd.uix.label import MDLabel
+from kivy.utils import get_color_from_hex
+from kivymd.uix.button import MDIconButton
 Window.size = (360, 700)
 
 
@@ -32,7 +34,7 @@ class Songle(MDApp):
 			"6": "Исполнитель",
 		}
 		for num in data.keys():
-			PLFloatLayout = MDFloatLayout()
+			PLFloatLayout = MDFloatLayout(size_hint = (None, None), size = (150, 150))
 			PLFloatLayout.add_widget(Image(source=f"Items/plimage{num}.png", pos_hint={"x": 0, "y": 0}))
 			PLFloatLayout.add_widget(
 				MDLabel(
@@ -40,10 +42,42 @@ class Songle(MDApp):
 					font_size = "16sp",
 					# size_hint = (None, None),
 					size = (130, 20),
-					pos = (10, 65),
-					color = "#E4E4E4"
+					pos_hint = {"x": 0.015, "center_y": 0.5},
+					theme_text_color = "Custom",
+					text_color = get_color_from_hex("#E4E4E4"),
+					valign = "middle",
+					halign = "center",
 				)
 			)
+			PLFloatLayout.add_widget(
+				MDLabel(
+					text = "30 песен",
+					font_size = "12sp",
+					size_hint = (0.5, 0.08),
+					pos_hint = {"x": 0.3, "y": 0.0333},
+					theme_text_color = "Custom",
+					text_color = get_color_from_hex("#E4E4E4"),
+				)
+			)
+			PLFloatLayout.add_widget(
+				MDIconButton(
+					icon = "heart-outline",
+					size_hint = (0.15, 0.15),
+					pos_hint = {"x": 0.7, "y": 0.833},
+					theme_icon_color = "Custom",
+					icon_color = get_color_from_hex("#E4E4E4")
+				)
+			)
+			PLFloatLayout.add_widget(
+				MDIconButton(
+					icon = "dots-vertical",
+					size_hint = (0.1133, 0.15),
+					pos_hint = {"x": 0.85, "y": 0.833},
+					theme_icon_color = "Custom",
+					icon_color = get_color_from_hex("#E4E4E4")
+				)
+			)
+
 			# self.root.screens[2].ids.plimage.source = f"Items/plimage{num}.png"
 			# # self.root.screens[2].ids.pltext.text = data[num]
 			self.root.screens[2].ids.plgl.add_widget(PLFloatLayout)
