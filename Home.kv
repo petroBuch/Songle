@@ -1,30 +1,8 @@
 #:import Svg kivy.graphics.svg
-# <PLFloatLayout@MDFloatLayout>
-# 	size_hint: (None, None)
-# 	size: (150, 150)
-
-# 	Image:
-# 		id: plimage
-# 		source: "Items/plimage1.png"
-# 		pos_hint: {"x": 0, "y": 0}
-
-# 	MDLabel:
-# 		text: "30 песен"
-# 		font_size: "12sp"
-# 		color: get_color_from_hex("#FFFFFF")
-# 		size_hint: (0.333, 0.08)
-# 		pos_hint: {"x": 0.32, "y": 0.0333}
-
-# 	MDIconButton:
-# 		icon: "Items/like.png"
-# 		size_hint: (0.1133, 0.1)
-# 		pos_hint: {"x": 0.7, "y": 0.833}
-
-# 	MDIconButton:	
-# 		icon: "Items/more.png"
-# 		icon_size: "4sp"	
-# 		size_hint: (0.02, 0.0866)
-# 		pos_hint: {"x": 0.913, "y": 0.84}
+# <MDLabel@MDLabel>:
+# 	font: "Montosserat.ttx"
+<RadioBoxLayout@MDBoxLayout>:
+	
 
 <SongImage@Image>:
 	source: "Items/songpic.png"
@@ -77,15 +55,20 @@
 		MDIconButton:
 			allow_stretch: True
 			keep_ratio: False
-			icon: "Items/like.png"
+			icon: "heart-outline"
 			size_hint: (0.071, 0.45)
 			pos_hint: {"x": 0.814, "y": 0.31}
+			theme_icon_color: "Custom"
+			icon_color: get_color_from_hex("#E4E4E4")
 
-		MDIconButton:		
-			size_hint: (None, None)
-			size: (3, 50)
-			pos_hint: {"x": 0.93, "y": 0.38}
-			icon: "Items/more.png"
+		MDIconButton:
+			allow_stretch: True
+			keep_ratio: False		
+			size_hint: (0.05, 0.5)
+			pos_hint: {"x": 0.9, "y": 0.3}
+			icon: "dots-vertical"
+			theme_icon_color: "Custom"
+			icon_color: get_color_from_hex("#E4E4E4")
 
 
 
@@ -262,6 +245,22 @@ MDScreen:
 					pos_hint: {"x": 0.05, "y": 0.6}
 					md_bg_color: get_color_from_hex("#1E1F24")
 					spacing: 20
+
+				MDLabel:
+					text: "Радио"
+					font_size: "20sp"
+					color: get_color_from_hex("#E4E4E4")
+					size_hint: (0.175, 0.0068)
+					pos_hint: {"x": 0.0277, "y": 0.589}
+
+				MDLabel:
+					text: "На основе выбранной темы"
+					font_size: "14sp"
+					color: get_color_from_hex("#818284")
+					size_hint: (0.538, 0.0048)
+					pos_hint: {"x": 0.0277, "y": 0.584}
+
+
 
 		MDBoxLayout:
 			orientation: "horizontal"
