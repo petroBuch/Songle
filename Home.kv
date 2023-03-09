@@ -1,6 +1,15 @@
 #:import Svg kivy.graphics.svg
 # <MDLabel@MDLabel>:
 # 	font: "Montosserat.ttx"
+<EPBox>:
+	adaptive_size: True
+	orientation: "vertical"
+	MDLabel:
+		text: "dasda"
+	MDLabel:
+		text: "dasdas"
+	MDLabel:
+		text: "dsda"
 <RadioBoxLayout@MDBoxLayout>:
 	
 
@@ -80,8 +89,10 @@
 MDScreen:
 	name: "home"
 	grid_lay: plgl
+
 	MDFloatLayout:
 		md_bg_color: get_color_from_hex("#FFFFFF")
+		adaptive_size: True
 
 		ScrollView:
 			do_scroll_x: False
@@ -89,9 +100,8 @@ MDScreen:
 			bar_width: 0.5
 
 			MDFloatLayout:
+				id: mainfl
 				md_bg_color: get_color_from_hex("#1E1F24")
-				size_hint_y: None
-				size: (360, 3500)
 
 
 				Image: 
@@ -259,8 +269,7 @@ MDScreen:
 					color: get_color_from_hex("#818284")
 					size_hint: (0.538, 0.0048)
 					pos_hint: {"x": 0.0277, "y": 0.584}
-
-
+					
 
 		MDBoxLayout:
 			orientation: "horizontal"
