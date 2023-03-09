@@ -13,6 +13,7 @@ from kivy.uix.image import Image
 from kivymd.uix.label import MDLabel
 from kivy.utils import get_color_from_hex
 from kivymd.uix.button import MDIconButton
+from kivymd.uix.expansionpanel import MDExpansionPanel, MDExpansionPanelOneLine
 Window.size = (360, 700)
 
 
@@ -81,6 +82,15 @@ class Songle(MDApp):
 			# self.root.screens[2].ids.plimage.source = f"Items/plimage{num}.png"
 			# # self.root.screens[2].ids.pltext.text = data[num]
 			self.root.screens[2].ids.plgl.add_widget(PLFloatLayout)
+		self.root.screens[2].ids.mainfl.add_widget(
+			MDExpansionPanel(
+				content=MDBoxLayout(),
+				panel_cls=MDExpansionPanelOneLine(
+					text="По артисту"
+				),
+				pos_hint = {"x": 0.0277, "y": 0.57}
+			)
+		)
 
 
 class ShadowBox(CommonElevationBehavior, MDBoxLayout):
@@ -89,6 +99,9 @@ class ShadowCard(CommonElevationBehavior, MDBoxLayout):
 	pass
 class ShadowImage(CommonElevationBehavior, Image):
 	pass
+class EPBox(MDBoxLayout):
+	pass
+
 
 if __name__ == '__main__':
 	Songle().run()
