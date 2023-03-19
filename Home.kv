@@ -3,6 +3,7 @@
 # 	font: "Montosserat.ttx"
 <EPBox>:
 	adaptive_size: True
+	md_bg_color: get_color_from_hex("#FFFFFF")
 	orientation: "vertical"
 	MDLabel:
 		text: "dasda"
@@ -10,22 +11,24 @@
 		text: "dasdas"
 	MDLabel:
 		text: "dsda"
-<RadioBoxLayout@MDBoxLayout>:
 	
 
-<SongImage@Image>:
+<SongImage>:
 	source: "Items/songpic.png"
 	size_hint: (None, None)
 
-<SongLabel@MDLabel>:
+<SongLabel>:
 	text: "Lorem Ipsum"
 	font_size: "18sp"
 	size_hint: (1, 1)
-	color: get_color_from_hex("#FFFFFF")
+	# valing: "top"
+	# haling: "middle"
+	theme_text_color: "Custom"
+	text_color: get_color_from_hex("#FFFFFF")
 	md_bg_color: get_color_from_hex("#1E1F24")
 
 <ShadowCard>:
-	size_hint: (0.9444, 0.0142)
+	size_hint: (1, 1)
 	radius: [1, 1, 10, 10]
 	elevation: 6
 	shadow_color: get_color_from_hex("#18181F")
@@ -36,21 +39,21 @@
 		radius: [1, 1, 10, 10]
 
 		MiniSongImage:
-			pos_hint: {"x": 0.023, "y": 0.16}
+			pos_hint: {"x": 0.023, "y": 0.25}
 			size_hint: (None, None)
 			size: (34, 34)
 
 		MDLabel:
 			text: "Lorem Ipsum"
 			font_size: "14sp"
-			size_hint: (0.24, 0.35)
+			size_hint: (1, 0.35)
 			pos_hint: {"x": 0.157, "y": 0.5}
 			color: get_color_from_hex("#E4E4E4")
 
 		MDLabel:
 			text: "Lorem Ipsum"
-			font_size: "10sp"
-			size_hint: (0.19, 0.25)
+			font_size: "12sp"
+			size_hint: (1, 0.25)
 			pos_hint: {"x": 0.157, "y": 0.26}
 			color: get_color_from_hex("#818284")
 
@@ -80,19 +83,25 @@
 			icon_color: get_color_from_hex("#E4E4E4")
 
 
-
 <MiniSongImage@Image>:
 	source: "Items/minisongpic.png"
 	size_hint: (None, None)
 	size: (34, 34)
 
+
+
+
+
+
+
+
+
+
 MDScreen:
 	name: "home"
-	grid_lay: plgl
 
 	MDFloatLayout:
 		md_bg_color: get_color_from_hex("#FFFFFF")
-		adaptive_size: True
 
 		ScrollView:
 			do_scroll_x: False
@@ -102,94 +111,88 @@ MDScreen:
 			MDFloatLayout:
 				id: mainfl
 				md_bg_color: get_color_from_hex("#1E1F24")
+				size_hint_y: None
+				height: 2100
+				size_hint_x: 1
 
+				MDBoxLayout:
+					orientation: "horizontal"
+					pos_hint: {"x": 0, "y": 0.9728}
+					size_hint: (1, 0.028)
+					line_width: 1
+					line_color: get_color_from_hex("#4E3064")
+					padding: [5, 0, 0, 0]
+					spacing: 5
 
-				Image: 
-					source: "Items/avatar.png"
-					pos_hint: {"x": 0.027, "y": 0.985}
-					size_hint: (0.11, 0.011)
+					Image: 
+						source: "Items/avatar.png"
+						size_hint: (0.11, 1)
 
-				MDLabel:
-					text: "Gustavo"
-					size_hint: (0.22, 0.0068)
-					pos_hint: {"x": 0.16, "y": 0.988}
-					color: get_color_from_hex("#E4E4E4")
-					bold: True	
+					MDLabel:
+						text: "Gustavo"
+						size_hint: (0.6, 1)
+						color: get_color_from_hex("#E4E4E4")
+						bold: True	
 
-				MDIconButton:
-					icon: "Items/upload.png"
-					size_hint: (0.088, 0.0068)
-					pos_hint: {"x": 0.75, "y": 0.988}
+					MDIconButton:
+						icon: "cloud-upload-outline"
+						size_hint: (0.2, 1)
+						theme_icon_color: "Custom"
+						icon_color: get_color_from_hex("#596AC6")
 
-				MDIconButton:
-					icon: "Items/notification.png"
-					size_hint: (0.088, 0.0068)
-					pos_hint: {"x": 0.87, "y": 0.9885}
+					MDIconButton:
+						icon: "email-variant"
+						size_hint: (0.2, 1)
+						theme_icon_color: "Custom"
+						icon_color: get_color_from_hex("#596AC6")
 
-				Image: 
-					source: "Items/separator.png"
-					size_hint: (1, 0.0006)
-					pos_hint: {"x": 0, "y": 0.982}
 
 				MDLabel:
 					text: "История"
-					size_hint: (0.236, 0.0068)
+					size_hint: (1, 0.0068)
 					color: get_color_from_hex("#E4E4E4")
-					pos_hint: {"x": 0.027, "y": 0.969}
+					pos_hint: {"x": 0.027, "y": 0.96}
 
 				MDLabel: 
 					text: "Все недавние эмоции в одной строчке"
 					color: get_color_from_hex("#818284")
-					size_hint: (0.9, 0.00514)
-					pos_hint: {"x": 0.027, "y": 0.964}
-					bold: True
+					size_hint: (1, 0.00514)
+					pos_hint: {"x": 0.027, "y": 0.9515}
+
 
 				ScrollView:					
 					do_scroll_x: True
 					do_scroll_y: False
 					bar_width: 0.5
-					size_hint_y: None
-					size: (1000, 160)
-					pos_hint: {"x": 0, "y": 0.915}
+					size_hint_y: 0.07
+					pos_hint: {"x": 0, "y": 0.87}
 
 					MDGridLayout:
+						id: songgl
 						cols: 7
 						rows: 2
 						padding: [10, 0, 0, 0]
+						spacing: 0
 						orientation: "tb-lr"
 						md_bg_color: get_color_from_hex("#1E1F24")
-						size_hint: (None, None)
-						size: (1000, 160)
+						size_hint_x: None
+						width: 1000
+						
 
-						SongImage
-						SongLabel
-						SongImage
-						SongLabel
-						SongImage
-						SongLabel
-						SongImage
-						SongLabel
-						SongImage
-						SongLabel
-						SongImage
-						SongLabel
-						SongImage
-						SongLabel
 
 				MDLabel: 
+					id: las
 					text: "Тематическая неделя"
-					size_hint: (0.6, 0.0068)
-					pos_hint: {"x": 0.027, "y": 0.905}
+					size_hint: (1, 0.0068)
+					pos_hint: {"x": 0.027, "y": 0.85}
 					color: get_color_from_hex("#E4E4E4")
 					bold: True
-					draw_shadow: True
-
 
 				ShadowImage:
 					source: "Items/themeweek.png"
-					pos_hint: {"x": 0.029, "y": 0.846}
-					size_hint: (None, None)
-					size: (340, 200)
+					font_size: "12sp"
+					pos_hint: {"x": 0.027, "y": 0.75}
+					size_hint: (0.94, 0.095)
 					elevation: 6
 					shadow_color: get_color_from_hex("#18181F")
 
@@ -200,18 +203,15 @@ MDScreen:
 					radius: (15, 15)
 					font_size: "10sp"
 					size_hint: (0.353, 0.0062)
-					pos_hint: {"x": 0.05, "y": 0.85}
+					pos_hint: {"x": 0.05, "y": 0.76}
 
-				ShadowCard:
-					pos_hint: {"x": 0.027, "y": 0.83}
-				ShadowCard:
-					pos_hint: {"x": 0.027, "y": 0.817}
-				ShadowCard:
-					pos_hint: {"x": 0.027, "y": 0.803}
-				ShadowCard:
-					pos_hint: {"x": 0.027, "y": 0.788}
-				ShadowCard:
-					pos_hint: {"x": 0.027, "y": 0.773}
+				MDGridLayout:
+					rows: 5
+					cols: 1
+					id: shadow_grid
+					md_bg_color: get_color_from_hex("#1E1F24")
+					size_hint: (0.94, 0.147)
+					pos_hint: {"x": 0.027, "y": 0.605}
 
 				ShadowBox:
 					size_hint: (0.9444, 0.0142)
@@ -220,7 +220,7 @@ MDScreen:
 					elevation: 6
 					shadow_color: get_color_from_hex("#18181F")
 					orientation: "horizontal"
-					pos_hint: {"x": 0.027, "y": 0.758}
+					pos_hint: {"x": 0.027, "y": 0.591}
 					md_bg_color: get_color_from_hex("#1E1F24")
 
 					MDTextButton:
@@ -237,14 +237,14 @@ MDScreen:
 
 				MDLabel:
 					text: "Найдено для Вас"
-					size_hint: (0.472, 0.00686)
-					pos_hint: {"x": 0.027, "y": 0.747}
+					size_hint: (1, 0.00686)
+					pos_hint: {"x": 0.027, "y": 0.57}
 					color: get_color_from_hex("#E4E4E4")
 
 				MDLabel:
 					text: "Основано на Вашей истории прослушивания"
-					size_hint: (0.95, 0.005)
-					pos_hint: {"x": 0.027, "y": 0.742}
+					size_hint: (1, 0.005)
+					pos_hint: {"x": 0.027, "y": 0.562}
 					color: get_color_from_hex("#818284")
 
 				MDGridLayout:
@@ -252,51 +252,44 @@ MDScreen:
 					cols: 2
 					rows: 3
 					size_hint: (0.8888, 0.14)
-					pos_hint: {"x": 0.05, "y": 0.6}
+					pos_hint: {"x": 0.05, "y": 0.41}
 					md_bg_color: get_color_from_hex("#1E1F24")
 					spacing: 20
 
-				MDLabel:
-					text: "Радио"
-					font_size: "20sp"
-					color: get_color_from_hex("#E4E4E4")
-					size_hint: (0.175, 0.0068)
-					pos_hint: {"x": 0.0277, "y": 0.589}
+				# MDLabel:
+				# 	text: "Радио"
+				# 	font_size: "20sp"
+				# 	color: get_color_from_hex("#E4E4E4")
+				# 	size_hint: (0.175, 0.0068)
+				# 	pos_hint: {"x": 0.0277, "y": 0.589}
 
-				MDLabel:
-					text: "На основе выбранной темы"
-					font_size: "14sp"
-					color: get_color_from_hex("#818284")
-					size_hint: (0.538, 0.0048)
-					pos_hint: {"x": 0.0277, "y": 0.584}
+				# MDLabel:
+				# 	text: "На основе выбранной темы"
+				# 	font_size: "14sp"
+				# 	color: get_color_from_hex("#818284")
+				# 	size_hint: (0.538, 0.0048)
+				# 	pos_hint: {"x": 0.0277, "y": 0.584}
 					
 
-		MDBoxLayout:
-			orientation: "horizontal"
-			size_hint: (1, 0.0714)
-			pos_hint: {"x": 0, "y": 0}
-			md_bg_color: get_color_from_hex("#23232D")
+		MDBottomNavigation:
+			id: box
+			size_hint: (1, 0.08)
+			panel_color: get_color_from_hex("#23232D")
 
-			MDIconButton:
+			MDBottomNavigationItem:
 				icon: "Items/home.png"
-				pos_hint: {"x": 0.088, "y": 0.16}
-				size_hint: (0.088, 0.66)
+				on_tab_press: root.manager.current = "home"
 
-			MDIconButton:
+			MDBottomNavigationItem:
+				on_tab_press: root.manager.current = "reg"
 				icon: "Items/radio.png"
-				pos_hint: {"x": 0.33, "y": 0.16}
-				size_hint: (0.088, 0.66)
 
-			MDIconButton:
+			MDBottomNavigationItem:
+				name: "reg"
 				icon: "Items/search.png"
-				pos_hint: {"x": 0.57, "y": 0.16}
-				size_hint: (0.088, 0.66)
 
-			MDIconButton:
+			MDBottomNavigationItem:
 				icon: "Items/playlist.png"
-				pos_hint: {"x": 0.82, "y": 0.16}
-				size_hint: (0.088, 0.66)
-
 
 
 
