@@ -14,6 +14,7 @@ from kivymd.uix.label import MDLabel
 from kivy.utils import get_color_from_hex
 from kivymd.uix.button import MDIconButton
 from kivymd.uix.expansionpanel import MDExpansionPanel, MDExpansionPanelOneLine
+from kivymd.uix.anchorlayout import MDAnchorLayout
 Window.size = (360, 700)
 
 
@@ -23,9 +24,24 @@ class Songle(MDApp):
 		screen_manager.add_widget(Builder.load_file("Login.kv"))
 		screen_manager.add_widget(Builder.load_file("Register.kv"))
 		screen_manager.add_widget(Builder.load_file("Home.kv"))
+		screen_manager.add_widget(Builder.load_file("Test.kv"))
 		screen_manager.current = "home"
 		return screen_manager
 	def on_start(self):
+		for i in range(7):
+			self.root.screens[2].ids.songgl.add_widget(
+				SongImage()
+			)
+			self.root.screens[2].ids.songgl.add_widget(
+				SongLabel()
+			)
+
+		for i in range(5):
+			self.root.screens[2].ids.shadow_grid.add_widget(
+				ShadowCard()
+			)
+
+
 		data = {
 			"1": "Рекомендации",
 			"2": "Новинки",
@@ -79,18 +95,26 @@ class Songle(MDApp):
 				)
 			)
 
-			# self.root.screens[2].ids.plimage.source = f"Items/plimage{num}.png"
-			# # self.root.screens[2].ids.pltext.text = data[num]
+	# 		# self.root.screens[2].ids.plimage.source = f"Items/plimage{num}.png"
+	# 		# # self.root.screens[2].ids.pltext.text = data[num]
 			self.root.screens[2].ids.plgl.add_widget(PLFloatLayout)
-		self.root.screens[2].ids.mainfl.add_widget(
-			MDExpansionPanel(
-				content=MDBoxLayout(),
-				panel_cls=MDExpansionPanelOneLine(
-					text="По артисту"
-				),
-				pos_hint = {"x": 0.0277, "y": 0.57}
-			)
-		)
+	# 	self.root.screens[2].ids.mainfl.add_widget(
+	# 		MDExpansionPanel(
+	# 			content=EPBox(),
+	# 			panel_cls=MDExpansionPanelOneLine(
+	# 				text="По артисту",
+	# 				theme_text_color="Custom",
+	# 				text_color=get_color_from_hex("#E4E4E4"),
+	# 				bg_color=get_color_from_hex("#4E3064"),
+	# 				radius=10,
+	# 				size_hint=(None, None),
+	# 				size=(340, 40)
+	# 			),
+	# 			pos_hint = {"x": 0.0277, "y": 0.57},
+	# 			size_hint=(None, None),
+	# 			size=(340, 40)
+	# 		)
+	# 	)
 
 
 class ShadowBox(CommonElevationBehavior, MDBoxLayout):
@@ -101,7 +125,10 @@ class ShadowImage(CommonElevationBehavior, Image):
 	pass
 class EPBox(MDBoxLayout):
 	pass
-
+class SongImage(Image):
+	pass
+class SongLabel(MDLabel):
+	pass
 
 if __name__ == '__main__':
 	Songle().run()
