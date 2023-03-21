@@ -291,6 +291,29 @@ MDScreen:
 			MDBottomNavigationItem:
 				icon: "Items/playlist.png"
 
+		MDBoxLayout:
+
+			md_bg_color: get_color_from_hex("#18181F")
+			size_hint: (1, 0.08)
+			pos_hint: {"x": 0, "y": 0.09}
+
+			MDIconButton:
+				id: play_but
+				icon: "play"
+				theme_icon_color: "Custom"
+				icon_color: get_color_from_hex("#E4E4E4")
+				size_hint: (None, None)
+				pos_hint: {"x": 0, "y": 0.05}
+
+			ProgressBar:
+				id: pg_bar
+				color: get_color_from_hex("#596AC6")
+				# secondary_color: get_color_from_hex("#4E3064")
+				value: 50
+				# pos_hint: {"x": 0, "y": 0}
+				# size_hint: (1, 0.01)
+
+
 
 
 
