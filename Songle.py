@@ -25,6 +25,7 @@ class Songle(MDApp):
 		screen_manager.add_widget(Builder.load_file("Register.kv"))
 		screen_manager.add_widget(Builder.load_file("Home.kv"))
 		screen_manager.add_widget(Builder.load_file("Test.kv"))
+		screen_manager.add_widget(Builder.load_file("Player.kv"))
 		screen_manager.current = "home"
 		return screen_manager
 	def on_start(self):
@@ -41,7 +42,6 @@ class Songle(MDApp):
 				ShadowCard()
 			)
 
-
 		data = {
 			"1": "Рекомендации",
 			"2": "Новинки",
@@ -57,7 +57,6 @@ class Songle(MDApp):
 				MDLabel(
 					text = data[num],
 					font_size = "16sp",
-					# size_hint = (None, None),
 					size = (130, 20),
 					pos_hint = {"x": 0.015, "center_y": 0.5},
 					theme_text_color = "Custom",
