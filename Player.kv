@@ -2,5 +2,105 @@ MDScreen:
 	name: "player"
 
 	MDFloatLayout:
+
 		Image:
-			source: ""
+			id: song_image
+			source: "Items/PlayerS_Image.png"
+			pos_hint: {"x": 0, "y": 0.25}
+
+		MDBottomNavigation:
+			size_hint: (1, 0.08)
+			panel_color: get_color_from_hex("#23232D")
+
+			MDBottomNavigationItem:
+				icon: "Items/home.png"
+				on_tab_press: root.manager.current = "home"
+
+			MDBottomNavigationItem:
+				on_tab_press: root.manager.current = "reg"
+				icon: "Items/radio.png"
+
+			MDBottomNavigationItem:
+				name: "reg"
+				icon: "Items/search.png"
+
+			MDBottomNavigationItem:
+				icon: "Items/playlist.png"
+
+		MDFloatLayout:
+
+			md_bg_color: get_color_from_hex("#18181F")
+			size_hint: (1, 0.25)
+			pos_hint: {"x": 0, "y": 0.09}
+			radius: [10, 10, 0, 0]
+
+			MDLabel:
+				id: song_name
+				text: "Don't Be so Serious"
+				halign: "left"
+				font_size: "16sp"
+				color: get_color_from_hex("#E4E4E4")
+				size_hint: (1, 0.21)
+				pos_hint: {"x": 0.02, "y": 0.76}
+
+			MDLabel:
+				id: song_artist
+				text: "Low Roar"
+				font_size: "14sp"
+				color: get_color_from_hex("#AA4DB9")
+				size_hint: (1, 0.15)
+				pos_hint: {"x": 0.03, "y": 0.67}
+
+			MDIconButton:
+				icon_size: 30
+				icon: "heart"
+				size_hint: (0.07, 0.15)
+				theme_icon_color: "Custom"
+				icon_color: get_color_from_hex("#596AC6")
+				pos_hint: {"x": 0.85, "y": 0.77}
+
+
+			MDIconButton:
+				id: player_butt
+				icon: "play"
+				size_hint: (0.17, 0.35)
+				icon_size: (40)
+				pos_hint: {"center_x": 0.5, "center_y": 0.5}
+				# theme_icon_color: "Custom"
+				# icon_color: get_color_from_hex("#")
+				md_bg_color: get_color_from_hex("#596AC6")
+				on_release: app.start_play()
+
+			SongSlider:
+				id: song_time_slider
+				min: 0
+				max: 100
+				hint: False
+				value: 0
+				size_hint: (0.95, 0.07)
+				pos_hint: {"x": 0.02, "y": 0.2}
+				thumb_color_active: get_color_from_hex("#596AC6")
+				thumb_color_inactive: get_color_from_hex("#596AC6")
+				color: get_color_from_hex("#596AC6")
+				track_color_active: get_color_from_hex("#4E3064")
+				track_color_inactive: get_color_from_hex("#4E3064")
+				show_off: False
+
+
+			MDLabel:
+				id: end_time
+				text: "0:00"
+				color: get_color_from_hex("#4E3064")
+				size_hint: (0.1, 0.08)
+				pos_hint: {"x": 0.85, "y": 0.08}
+				font_size: "14sp"
+
+			MDLabel:
+				id: curr_time
+				text: "0:00"
+				color: get_color_from_hex("#596AC6")
+				size_hint: (0.1, 0.08)
+				pos_hint: {"x": 0.05, "y": 0.08}
+				font_size: "14sp"
+
+
