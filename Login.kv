@@ -108,7 +108,9 @@ MDScreen:
 			color: get_color_from_hex("#E4E4E4")
 			size_hint: (0.33, 0.07)
 			pos_hint: {"x": 0.33, "y": 0.44}
+			font_size: "24sp"
 			on_press: root.manager.current="home"
+
 
 		MDLabel:
 			text: "или через"
@@ -119,13 +121,15 @@ MDScreen:
 
 		MDIconButton:
 			icon: "Items/vk.png"
+			icon_size: 60
 			size_hint: (None, None)
-			pos_hint: {"x": 0.54, "y": 0.23}
+			pos_hint: {"x": 0.51, "y": 0.22}
 
 		MDIconButton:
+			icon_size: 60
 			icon: "Items/tg.png"
 			size_hint: (None, None)
-			pos_hint: {"x": 0.28, "y": 0.23}
+			pos_hint: {"x": 0.25, "y": 0.22}
 
 
 
