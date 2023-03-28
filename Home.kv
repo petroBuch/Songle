@@ -137,11 +137,13 @@ MDScreen:
 					MDIconButton:
 						icon: "cloud-upload-outline"
 						size_hint: (0.2, 1)
+						icon_size: 30
 						theme_icon_color: "Custom"
 						icon_color: get_color_from_hex("#596AC6")
 
 					MDIconButton:
 						icon: "email-variant"
+						icon_size: 30
 						size_hint: (0.2, 1)
 						theme_icon_color: "Custom"
 						icon_color: get_color_from_hex("#596AC6")
@@ -201,7 +203,7 @@ MDScreen:
 					md_bg_color: get_color_from_hex("#FFFFFF")
 					text_color: get_color_from_hex("#EF3838")
 					radius: (15, 15)
-					font_size: "10sp"
+					font_size: "16sp"
 					size_hint: (0.353, 0.0062)
 					pos_hint: {"x": 0.05, "y": 0.76}
 
@@ -285,33 +287,53 @@ MDScreen:
 				icon: "Items/radio.png"
 
 			MDBottomNavigationItem:
-				name: "reg"
 				icon: "Items/search.png"
 
 			MDBottomNavigationItem:
 				icon: "Items/playlist.png"
 
-		MDBoxLayout:
+		MDFloatLayout:
 
 			md_bg_color: get_color_from_hex("#18181F")
 			size_hint: (1, 0.08)
 			pos_hint: {"x": 0, "y": 0.09}
 
 			MDIconButton:
-				id: play_but
+				id: play_butt
 				icon: "play"
 				theme_icon_color: "Custom"
 				icon_color: get_color_from_hex("#E4E4E4")
-				size_hint: (None, None)
-				pos_hint: {"x": 0, "y": 0.05}
+				size_hint: (None, 0.7)
+				pos_hint: {"x": 0.85, "y": 0.15}
+				on_release: app.start_play()
 
-			ProgressBar:
+			MDProgressBar:
 				id: pg_bar
+				# theme_color: "Custom"
 				color: get_color_from_hex("#596AC6")
-				# secondary_color: get_color_from_hex("#4E3064")
-				value: 50
-				# pos_hint: {"x": 0, "y": 0}
-				# size_hint: (1, 0.01)
+				secondary_color: get_color_from_hex("#4E3064")
+				value_normalized: 0.5
+				pos_hint: {"x": 0, "y": 0}
+				size_hint: (1, 0.05)
+
+			MDTextButton:
+				id: song_name
+				text: "Tempel"
+				font_size: "16sp"
+				color: get_color_from_hex("#E4E4E4")
+				size_hint: (0.4, 0.5)
+				pos_hint: {"x": 0.04, "y": 0.45}
+				haling: "left"
+				valing: "middle"
+				on_press: root.manager.current="player"
+
+			MDLabel: 
+				id: song_artist
+				text: "SWA Empire"
+				font_size: "12sp"
+				color: get_color_from_hex("#818284")
+				size_hint: (1, 0.375)
+				pos_hint: {"x": 0.05, "y": 0.2}
 
 
 
