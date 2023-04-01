@@ -47,12 +47,20 @@ class Songle(MDApp):
 
 		self.time = 0
 		self.updater = None
+		self.song_queue = []
+		self.previous_song = []	
+		self.curr_song = self.audio_list[self.song_index]	
 
 
 		return screen_manager
 
 	def on_start(self):
-		print(self.player.length)
+		for i in self.audio_list:
+			if self.audio_list[self.song_index]==i:
+				continue
+			else:
+				self.song_queue.append(i)
+
 		for i in range(7):
 			self.root.screens[2].ids.songgl.add_widget(
 				SongImage()
@@ -120,6 +128,12 @@ class Songle(MDApp):
 
 			self.root.screens[2].ids.plgl.add_widget(PLFloatLayout)
 
+		Clock.schedule_interval(self.update_next, 2)
+
+	def update_next(self, dt):
+		if round(self.player.length)%60 == round(self.player.get_pos())%60:
+			Clock.schedule_once(self.play_next, 1)
+
 	def start_play(self, *args):
 		if self.player.state == "play":
 			self.root.screens[4].ids.player_butt.icon = "pause"
@@ -132,22 +146,23 @@ class Songle(MDApp):
 			self.root.screens[4].ids.player_butt.icon = "play"
 			self.player.seek(self.time)
 			self.player.play()
-			self.root.screens[4].ids.song_time_slider.max = round(self.player.length)
-			self.root.screens[2].ids.pg_bar.max = round(self.player.length)
-			self.root.screens[2].ids.song_name.text = self.audio_list[self.song_index][self.audio_list[self.song_index].find("-")+1:-4]
-			self.root.screens[2].ids.song_artist.text = self.audio_list[self.song_index][:self.audio_list[self.song_index].find("-")-1]
-			self.root.screens[4].ids.song_name.text = self.audio_list[self.song_index][self.audio_list[self.song_index].find("-")+1:-4]
-			self.root.screens[4].ids.song_artist.text = self.audio_list[self.song_index][:self.audio_list[self.song_index].find("-")-1]
-			self.root.screens[4].ids.song_image.source = f"Items/{self.audio_list[self.song_index][:-4]}.png"
-			end_min = round(self.player.length)//60
-			end_sec = round(self.player.length)%60
-			self.root.screens[4].ids.end_time.text = str(end_min)+":"+"0"*(2-len(str(end_sec))) + str(end_sec)
 			self.root.screens[4].ids.player_butt.icon = "pause"
 			self.root.screens[2].ids.play_butt.icon = "pause"
-
+			self.update_all()
 			if self.updater is None:
 				self.updater = Clock.schedule_interval(self.update_slider_and_time, 0.5)
 
+	def update_all(self):
+		self.root.screens[4].ids.song_time_slider.max = round(self.player.length)
+		self.root.screens[2].ids.pg_bar.max = round(self.player.length)
+		self.root.screens[2].ids.song_name.text = self.curr_song[self.curr_song.find("-")+1:-4]
+		self.root.screens[2].ids.song_artist.text = self.curr_song[:self.curr_song.find("-")-1]
+		self.root.screens[4].ids.song_name.text = self.curr_song[self.curr_song.find("-")+1:-4]
+		self.root.screens[4].ids.song_artist.text = self.curr_song[:self.curr_song.find("-")-1]
+		self.root.screens[4].ids.song_image.source = f"Items/{self.curr_song[:-4]}.png"
+		end_min = round(self.player.length)//60
+		end_sec = round(self.player.length)%60
+		self.root.screens[4].ids.end_time.text = str(end_min)+":"+"0"*(2-len(str(end_sec))) + str(end_sec)
 
 	def update_slider_and_time(self, dt):
 		self.root.screens[4].ids.song_time_slider.value = self.player.get_pos()
@@ -163,6 +178,27 @@ class Songle(MDApp):
 		else:
 			self.root.screens[4].ids.player_butt.icon = "play"
 			self.root.screens[2].ids.play_butt.icon = "play"
+
+
+	def play_next(self, *args):
+		print(self.player)
+		self.previous_song.append(self.curr_song)
+		self.player.stop()
+		Songle.player = SoundLoader.load(f"Music/{self.song_queue[0]}")
+		self.curr_song = self.song_queue[0]
+		self.start_play()
+		self.song_queue.remove(self.song_queue[0])
+		print(self.player)
+
+	def play_previous(self):
+		self.player.stop()
+		self.player = SoundLoader.load(f"Music/{self.previous_song[-1]}")
+		self.curr_song = self.previous_song[-1]
+		self.start_play()
+		self.previous_song.remove(self.previous_song[-1])
+
+
+
 
 
 
@@ -198,6 +234,7 @@ class SongSlider(MDSlider):
 			ret_val = super(SongSlider, self).on_touch_up(touch)
 
 			Songle.player.seek(self.value)
+			print(1, Songle.player)
 
 			return ret_val
 		else:
