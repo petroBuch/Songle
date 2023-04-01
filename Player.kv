@@ -5,7 +5,7 @@ MDScreen:
 
 		Image:
 			id: song_image
-			source: "Items/PlayerS_Image.png"
+			source: ""
 			pos_hint: {"x": 0, "y": 0.25}
 
 		MDBottomNavigation:
@@ -104,3 +104,22 @@ MDScreen:
 				font_size: "14sp"
 
 
+			MDIconButton:
+				id: skip_next
+				icon: "skip-next"
+				size_hint: (0.15, 0.3)
+				pos_hint: {"x": 0.6, "y": 0.34}
+				theme_icon_color: "Custom"
+				icon_color: get_color_from_hex("#596AC6")
+				icon_size: 40
+				on_release: app.play_next()
+
+			MDIconButton:
+				id: skip_previous
+				icon: "skip-previous"
+				size_hint: (0.15, 0.3)
+				pos_hint: {"x": 0.25, "y": 0.34}
+				theme_icon_color: "Custom"
+				icon_color: get_color_from_hex("#596AC6")
+				icon_size: 40
+				on_release: app.play_previous()			
