@@ -181,14 +181,13 @@ class Songle(MDApp):
 
 
 	def play_next(self, *args):
-		print(self.player)
 		self.previous_song.append(self.curr_song)
 		self.player.stop()
 		Songle.player = SoundLoader.load(f"Music/{self.song_queue[0]}")
 		self.curr_song = self.song_queue[0]
 		self.start_play()
 		self.song_queue.remove(self.song_queue[0])
-		print(self.player)
+
 
 	def play_previous(self):
 		self.player.stop()
@@ -234,7 +233,6 @@ class SongSlider(MDSlider):
 			ret_val = super(SongSlider, self).on_touch_up(touch)
 
 			Songle.player.seek(self.value)
-			print(1, Songle.player)
 
 			return ret_val
 		else:
