@@ -71,24 +71,25 @@ MDScreen:
 
 
 		ItemTextInput:
+			id: email
 			pos_hint: {"x": 0.055, "y": 0.716}
 			size_hint: (0.88, 0.095)
-			hint_text: "Логин"
+			hint_text: "Email"
 
 		ItemTextInput:
+			id: password
 			pos_hint: {"x": 0.055, "y": 0.637}
 			size_hint: (0.88, 0.095)
 			hint_text: "Пароль"
 			password: True
 
 		MDIconButton:
-			id: icon 
 			icon: "square-outline"
 			size_hint: (0.08, 0.04)
 			pos_hint: {"x": 0.055, "y": 0.6}
 			theme_icon_color: "Custom"
 			icon_color: get_color_from_hex("#D9D9D9")
-			# on_press: app.press_stay(self)
+
 
 		MDLabel:
 			text: "Не выходить из системы"
