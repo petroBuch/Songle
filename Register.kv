@@ -64,16 +64,19 @@ MDScreen:
 			size_hint: (0.55, 0.09)
 
 		ItemTextInput:
+			id: email
 			pos_hint: {"x": 0.055, "y": 0.716}
 			size_hint: (0.88, 0.095)
 			hint_text: "Email"
 
 		ItemTextInput:
+			id: login
 			pos_hint: {"x": 0.055, "y": 0.637}
 			size_hint: (0.88, 0.095)
 			hint_text: "Логин"
 
 		ItemTextInput:
+			id: password
 			pos_hint: {"x": 0.055, "y": 0.559}
 			size_hint: (0.88, 0.095)
 			hint_text: "Пароль"
@@ -108,7 +111,7 @@ MDScreen:
 			size_hint: (0.78, 0.07)
 			pos_hint: {"x": 0.11, "y": 0.38}
 			radius: 10
-			on_press: root.manager.current="home"
+			on_press: app.register()
 
 		MDLabel:
 			text: "или через"
