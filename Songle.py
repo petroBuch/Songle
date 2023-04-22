@@ -6,6 +6,9 @@ from ffpyplayer.player import MediaPlayer
 
 import random
 
+import pandas as pd
+import csv
+
 import kivy
 from kivy.properties import ObjectProperty
 from kivymd.uix.floatlayout import MDFloatLayout
@@ -34,6 +37,7 @@ class Songle(MDApp):
 	audio_list = os.listdir(music_folder)
 	song_index = random.randint(0, len(audio_list)-1)
 	player = SoundLoader.load(f"Music/{audio_list[song_index]}")
+	users_df = pd.read_csv("Users.csv")
 
 
 	def build(self):
@@ -43,7 +47,7 @@ class Songle(MDApp):
 		screen_manager.add_widget(Builder.load_file("Home.kv"))
 		screen_manager.add_widget(Builder.load_file("Test.kv"))
 		screen_manager.add_widget(Builder.load_file("Player.kv"))
-		screen_manager.current = "player"
+		screen_manager.current = "reg"
 
 		self.time = 0
 		self.updater = None
@@ -195,6 +199,34 @@ class Songle(MDApp):
 		self.curr_song = self.previous_song[-1]
 		self.start_play()
 		self.previous_song.remove(self.previous_song[-1])
+
+	def register(self):
+		ID = list(self.users_df.iterrows())
+		email = self.root.screens[1].ids.email.text
+		login = self.root.screens[1].ids.login.text
+		password = self.root.screens[1].ids.password.text
+		email_list = self.users_df["Email"].unique()
+		try:
+			new_user = pd.Series({"ID": ID[-1][0]+1, "Email": email, "Логин": login, "Пароль": password})
+		except:
+			new_user = pd.Series({"ID": 0, "Email": email, "Логин": login, "Пароль": password})
+		if email not in email_list:
+			self.users_df = self.users_df._append(new_user, ignore_index = True)
+			print(self.users_df)
+			self.users_df.to_csv("Users.csv", index=False)
+			self.root.current = "home"
+		else:
+			print("Этот Email уже используется!")
+
+
+
+	# def login(self):
+	# 	email_list = self.users_df["Email"].unique()
+	# 	password = self.root.screens[0].ids.password.text
+	# 	email = self.root.screens[0].ids.email.text
+	# 	if email in email_list and :
+
+
 
 
 
